@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
-import pokemon from './slices/pokemons.slice'
+import user from './slices/user.slice'
 
 export default configureStore({
   reducer: {
-    pokemon
+    user
 	}
 })

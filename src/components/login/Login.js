@@ -1,26 +1,45 @@
+import '../../css/Login.css'
+import pokelogo from '../../image/pokemon-logo.png'
+import pika8bits from '../../image/pikagif.gif'
+import pokeball from '../../image/ball.png'
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { changeUser } from '../../store/slices/user.slice';
 
 const Login = () => {
 
     const [userName, setUserName] = useState("");
-    console.log(userName);
+    // console.log(userName);
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
 
-    const submit = ()=>{
-
+    const getName = ()=>{
+        dispatch(changeUser(userName));
+        navigate("/pokedex");
     }
 
     return (
-        <div>
-            <h1>Login</h1>
-            <form className='form' action="" onChange={e => e.preventDefault()}>
-                <input 
-                    type="text" 
-                    onChange={e => setUserName(e.target.value)} 
-                    value={userName} 
-                    placeholder='Insert your name'
-                />
-                <button onClick={submit}>Enviar</button>
-            </form>
+        <div className='login'>
+            <section className='content'>
+                <img src={pokelogo} alt="" />
+                <div className='message'>
+                    <img src={pika8bits} alt="" />
+                    <p>Hi... Give your name to start please</p>
+                </div>
+                <form className='form' action="" onChange={e => e.preventDefault()}>
+                    <input 
+                        className='input'
+                        type="text" 
+                        onChange={e => setUserName(e.target.value)} 
+                        value={userName} 
+                        placeholder='Your name...'
+                    />
+                    <button className='btn-ball' onClick={getName}>
+                        <img src={pokeball} alt="" />
+                    </button>
+                </form>
+            </section>
         </div>
     );
 };

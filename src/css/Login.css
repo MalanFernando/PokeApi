@@ -1,0 +1,66 @@
+.login{
+    background-color: #b95353;
+}
+.content{
+    text-align: center;
+    max-width: 1200px;
+    min-height: 100vh;
+    padding: 0 1rem;
+    margin: 0 auto;
+}
+.content>img{
+    max-width: 100%;
+    padding: 1rem;
+}
+.message{
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+    margin: 0 1rem;
+}
+.message>img{
+    max-width: 50px;
+    margin: 0 1rem;
+}
+.message>p{
+    align-self: flex-start;
+    background-color: #e7eee6;
+    color: #1d1d1d;
+    font-size: .8rem;
+    padding: .5rem;
+    border-radius: 4px 4px 4px 0;
+    display: flex;
+    text-align: left;
+}
+
+.form{
+    background-color: #722d2d48;
+    border-radius: 20px;
+    width: fit-content;
+    padding: .2rem .4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+.input{
+    background: none;
+    border: none;
+    outline: none;
+    padding: .5rem 1rem;
+    border-radius: 4px;
+    color: #fff;
+}
+.btn-ball{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.btn-ball>img{
+    width: 30px;
+    padding: .1rem .2rem;
+    opacity: .8;
+}
+.btn-ball>img:hover{
+    opacity: 1;
+}
