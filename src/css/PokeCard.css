@@ -1,0 +1,24 @@
+.pokecard{
+    background-color: #eef1ec;
+    text-align: center;
+    width: fit-content;
+    padding: .5rem 1rem;
+    border-radius: 3px;
+    cursor: pointer;
+    position: relative;
+    display: grid;
+    justify-items: center;
+}
+/* .pokecard:hover{
+    
+} */
+
+.card-id{
+    background-color: #c04242;
+    color: #fff;
+    padding: .1rem .5rem;
+    font-size: .8rem;
+    border-radius: 0 0 3px 3px;
+    position: absolute;
+    top: 0;
+}
