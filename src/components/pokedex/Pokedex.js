@@ -3,19 +3,28 @@ import '../../css/Pokedex.css'
 import { useSelector } from 'react-redux';
 import axios from 'axios';
 import PokemonCard from '../pokemonCard/PokemonCard';
+import { useNavigate } from 'react-router-dom';
 
 const Pokedex = () => {
 
     const user = useSelector((state)=> state.user )
 
     const [pokemons, setPokemons] = useState([])
+    const [searchPokemons, setSearchPokemons] = useState("")
 
     useEffect(()=>{
         axios.get("https://pokeapi.co/api/v2/pokemon")
         .then(res=> setPokemons(res.data.results))
     },[])
 
+    const navigate = useNavigate();
+
+    const searchPoke = ()=>{
+        navigate(`/pokedex/${searchPokemons}`)
+    }
+
     // console.log(pokemons);
+    // console.log(searchPokemons);
 
     return (
         <div className='pokedex'>
@@ -29,10 +38,16 @@ const Pokedex = () => {
                 <div className='content-bar'>
                     <p>Welcome {user}</p>
                     <form className='form form-poke' action="" onChange={e => e.preventDefault()}>
-                        <button className='btn-ball'>
+                        <button className='btn-ball' onClick={searchPoke}>
                             <i className="fa-solid fa-magnifying-glass"></i>
                         </button>
-                        <input className='input input-poke' type="text" placeholder='search...' />
+                        <input 
+                            className='input input-poke' 
+                            type="text" 
+                            placeholder='search...'
+                            value={searchPokemons}
+                            onChange={e=> setSearchPokemons(e.target.value)}
+                        />
                     </form>
                 </div>
             </section>

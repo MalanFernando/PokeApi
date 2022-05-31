@@ -1,13 +1,12 @@
 .pokecard{
-    background-color: #eef1ec;
-    text-align: center;
-    /* width: fit-content; */
+    background-color: #eaf0e6;
     padding: .5rem 1rem;
     border-radius: 3px;
     cursor: pointer;
     position: relative;
     display: grid;
     justify-items: center;
+    text-transform: capitalize;
 }
 /* .pokecard:hover{
     

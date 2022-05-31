@@ -21,9 +21,9 @@ const PokemonDetail = () => {
             <section className='detail-img'>
                 <img src={pokemonDetail.sprites?.front_default} alt="" />
                 <img src={pokemonDetail.sprites?.back_default} alt="" />
+                <h2 className='info-title'>{pokemonDetail.name}</h2>
             </section>
             <section className='detail-info'>
-                <h2 className='info-title'>{pokemonDetail.name}</h2>
                 <div className='info-type'>
                     {
                         pokemonDetail.types?.map(type=>(
