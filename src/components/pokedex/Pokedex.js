@@ -37,11 +37,13 @@ const Pokedex = () => {
                 </div>
             </section>
             <section className='poke-content'>
+                <div className='content-cards'>
                 {
                     pokemons.map(pokemon=>(
                         <PokemonCard key={pokemon.url} pokeUrl={pokemon.url}/>
                     ))
                 }
+                </div>
             </section>
         </div>
     );

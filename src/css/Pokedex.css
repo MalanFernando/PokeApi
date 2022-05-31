@@ -60,12 +60,17 @@
 }
 
 .poke-content{
-    /* background-color: #548369; */
+    background-color: #548369;
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
     justify-content: center;
+    padding: 4rem .5rem;
+}
+.content-cards{
+    background-color: #ac6666;
+    /* padding: 1rem; */
+    display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-    padding: 4rem 0;
 }
