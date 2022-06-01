@@ -49,6 +49,9 @@ const Pokedex = () => {
                             onChange={e=> setSearchPokemons(e.target.value)}
                         />
                     </form>
+                    <select name="" id="">
+                        <option value="">All</option>
+                    </select>
                 </div>
             </section>
             <section className='poke-content'>
