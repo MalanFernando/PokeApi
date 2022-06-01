@@ -25,7 +25,12 @@ const Login = () => {
                 <img src={pokelogo} alt="" />
                 <div className='message'>
                     <img src={pika8bits} alt="" />
-                    <p>Hi... Give your name to start please</p>
+                    <div className='message-cont'>
+                        <p>
+                            <span className='msg hi'>Hi...</span>
+                            <span className='msg give'>Give me your name</span>
+                        </p>
+                    </div>
                 </div>
                 <form className='form' action="" onChange={e => e.preventDefault()}>
                     <input 
