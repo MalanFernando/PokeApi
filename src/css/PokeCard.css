@@ -21,3 +21,6 @@
     position: absolute;
     top: 0;
 }
+.pokecard>h3{
+    font-size: .9rem;
+}
