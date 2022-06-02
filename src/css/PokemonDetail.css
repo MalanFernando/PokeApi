@@ -12,22 +12,30 @@
 }
 .detail-img{
     background-color: #fff;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 26% 100%, 0 78%);
     border-radius: 4px;
     width: fit-content;
     margin: 0 auto;
-    padding: 2rem 1rem
+    padding: 1rem
 }
 .detail-img>img{
-    background-color: #282928;
+    background-color: #131413;
     border-radius: 3px;
-    padding: 1rem;
+    padding: .5rem;
     margin: 0 .1rem;
 }
 
+/* Estilos para la info */
+.content-info{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 2rem 1rem;
+}
 .detail-info{
-    /* background-color: #fff; */
-    padding: 1rem;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 1.5rem;
+    margin: 1rem;
 }
 .info-title{
     text-transform: capitalize;
@@ -38,6 +46,10 @@
     flex-wrap: wrap;
 }
 .type{
+    background-color: #131614;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: .8rem;
     padding: .3rem 2rem;
     margin: 1rem;
     border-radius: 3px;
@@ -56,8 +68,14 @@
 }
 .info-w_h>li>span{
     font-size: .7rem;
+    font-weight: 500;
+    text-transform: uppercase;
 }
 
+.detail-stats{
+    background-color: #fff;
+    border-radius: 4px;
+}
 .stats-list{
     margin: 1.5rem auto;
     padding: 0 1rem;
@@ -70,3 +88,7 @@
     /* flex-wrap: wrap; */
     justify-content: space-between;
 }
+/* No funciona los estilos para progress bar */
+/* progress[value]::-webkit-progress-bar {
+    background-color: red;
+  } */
