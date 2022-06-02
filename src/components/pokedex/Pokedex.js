@@ -10,21 +10,42 @@ const Pokedex = () => {
     const user = useSelector((state)=> state.user )
 
     const [pokemons, setPokemons] = useState([])
+    const [types, setTypes] = useState([])
     const [searchPokemons, setSearchPokemons] = useState("")
 
-    useEffect(()=>{
-        axios.get("https://pokeapi.co/api/v2/pokemon")
-        .then(res=> setPokemons(res.data.results))
-    },[])
+    // const [page, setPage]
 
     const navigate = useNavigate();
 
+    useEffect(()=>{
+        axios.get("https://pokeapi.co/api/v2/pokemon/")
+        .then(res=> setPokemons(res.data.results))
+
+        axios.get("https://pokeapi.co/api/v2/type/")
+        .then(res=> setTypes(res.data.results))        
+    },[])
+
+    const pokemonsNames = pokemons.map(pokemon=> pokemon.name)
+
     const searchPoke = ()=>{
-        navigate(`/pokedex/${searchPokemons}`)
+        if (pokemonsNames.includes(searchPokemons)) {
+            navigate(`/pokedex/${searchPokemons}`)
+        }else{
+            alert("pokemon don't exist")
+        }
+    }
+
+    const filterType = (e)=>{
+        axios.get(e.target.value)
+        .then(res => setPokemons(res.data.pokemon))
     }
 
     // console.log(pokemons);
+    // console.log(types);
     // console.log(searchPokemons);
+
+    const pokemonPaginated = pokemons.slice(0, 24);
+
 
     return (
         <div className='pokedex'>
@@ -46,18 +67,25 @@ const Pokedex = () => {
                             type="text" 
                             placeholder='search...'
                             value={searchPokemons}
-                            onChange={e=> setSearchPokemons(e.target.value)}
+                            onChange={e=> setSearchPokemons(e.target.value.toLowerCase())}
                         />
                     </form>
-                    <select name="" id="">
+                    <select onChange={filterType} name="" id="">
                         <option value="">All</option>
+                        {
+                            types.map(type=>(
+                                <option key={type.url} value={type.url}>
+                                    {type.name}
+                                </option>
+                            ))
+                        }
                     </select>
                 </div>
             </section>
             <section className='poke-content'>
                 <div className='content-cards'>
                 {
-                    pokemons.map(pokemon=>(
+                    pokemonPaginated.map(pokemon=>(
                         <PokemonCard key={pokemon.url} pokeUrl={pokemon.url}/>
                     ))
                 }

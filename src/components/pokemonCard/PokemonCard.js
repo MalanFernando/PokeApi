@@ -15,7 +15,7 @@ const PokemonCard = ({pokeUrl}) =>{
 
     return(
         <div className="pokecard" onClick={()=> navigate(`/pokedex/${pokemon.id}`)}>
-            <span className="card-id">#{pokemon?.id}</span>
+            <span className="card-id"># {pokemon?.id}</span>
             <img src={pokemon?.sprites?.front_default} alt="" />
             <h3>{pokemon?.name}</h3>
         </div>

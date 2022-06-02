@@ -26,7 +26,7 @@ const Login = () => {
                 <div className='message'>
                     <img src={pika8bits} alt="" />
                     <div className='message-cont'>
-                        <p>
+                        <p className='bounce animated'>
                             <span className='msg hi'>Hi...</span>
                             <span className='msg give'>Give me your name</span>
                         </p>
